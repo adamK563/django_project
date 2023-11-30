@@ -1,0 +1,11 @@
+# Ignore compiled files
+*.class
+*.pyc
+*.o
+
+# Ignore the virtual environment directory
+venv/
+
+# Ignore sensitive information
+config.ini
+secrets.json
