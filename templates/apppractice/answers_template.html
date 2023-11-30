@@ -1,0 +1,20 @@
+<!-- apppractice/templates/apppractice/answers_template.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Answers</title>
+    <!-- your styles here -->
+</head>
+<body>
+    <h2>Submitted Data</h2>
+    <h2 class="selected-answers">Selected Answers</h2>
+    <ul class="selected-answers">
+        {% for data in data_list %}
+            <li class="selected-answer">
+                <strong>{{ data.question }}</strong><br>
+                <span>{{ data.selected_answer }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

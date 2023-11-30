@@ -3,80 +3,7 @@
 <html>
 <head>
     <title>Form Example</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f8f8;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h2 {
-            color: #333;
-        }
-
-        form {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-        }
-
-        input[type="radio"] {
-            margin-right: 4px;
-        }
-
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        h2:last-child {
-            margin-top: 20px;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        li {
-            margin-bottom: 8px;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 4px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-
-        h2.selected-answers {
-            margin-top: 20px;
-        }
-
-        ul.selected-answers {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        li.selected-answer {
-            margin-bottom: 8px;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 4px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    <!-- your styles here -->
 </head>
 <body>
     <h2>Form</h2>
@@ -85,36 +12,5 @@
         {{ form.as_p }}
         <button type="submit">Submit</button>
     </form>
-    
-
-    <h2>Submitted Data</h2>
-    <ul>
-        {% for data in data_list %}
-            <li>
-                <strong>{{ data.question }}</strong><br>
-                <label><input type="radio" name="answer{{ data.id }}" value="{{ data.answer1 }}"> {{ data.answer1 }}</label>
-                <label><input type="radio" name="answer{{ data.id }}" value="{{ data.answer2 }}"> {{ data.answer2 }}</label>
-                <label><input type="radio" name="answer{{ data.id }}" value="{{ data.answer3 }}"> {{ data.answer3 }}</label>
-                <label><input type="radio" name="answer{{ data.id }}" value="{{ data.answer4 }}"> {{ data.answer4 }}</label>
-                <label><input type="radio" name="answer{{ data.id }}" value="{{ data.answer5 }}"> {{ data.answer5 }}</label>
-            </li>
-        {% endfor %}
-    </ul>
-    
-    <button type="button" onclick="submitAllAnswers()">Submit Answers</button>
-
-    <h2 class="selected-answers">Selected Answers</h2>
-    <ul class="selected-answers">
-        {% for data in data_list %}
-            <li class="selected-answer">
-                <strong>{{ data.question }}</strong><br>
-                <span>{{ data.selected_answer }}</span>
-
-            </li>
-        {% endfor %}
-    </ul>
-
-
-    
 </body>
 </html>

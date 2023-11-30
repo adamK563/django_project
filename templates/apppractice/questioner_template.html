@@ -1,0 +1,27 @@
+<!-- apppractice/templates/apppractice/questioner_template.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Questioner</title>
+    <!-- your styles here -->
+</head>
+<body>
+    <h2>Questioner</h2>
+    <form method="post" action="{% url 'questioner_view' %}">
+        {% csrf_token %}
+        <ul>
+            {% for data in data_list %}
+                <li>
+                    <strong>{{ data.question }}</strong><br>
+                    <label><input type="radio" name="answer{{ data.id }}" value="{{ data.answer1 }}"> {{ data.answer1 }}</label>
+                    <label><input type="radio" name="answer{{ data.id }}" value="{{ data.answer2 }}"> {{ data.answer2 }}</label>
+                    <label><input type="radio" name="answer{{ data.id }}" value="{{ data.answer3 }}"> {{ data.answer3 }}</label>
+                    <label><input type="radio" name="answer{{ data.id }}" value="{{ data.answer4 }}"> {{ data.answer4 }}</label>
+                    <label><input type="radio" name="answer{{ data.id }}" value="{{ data.answer5 }}"> {{ data.answer5 }}</label>
+                </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Submit Answers</button>
+    </form>
+</body>
+</html>
