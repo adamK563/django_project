@@ -3,18 +3,39 @@
 <html>
 <head>
     <title>Answers</title>
-    <!-- your styles here -->
+    <style>
+        body {
+            margin: 20px;
+        }
+    
+        .selected-answers {
+            list-style-type: none;
+            padding: 0;
+        }
+    
+        .selected-answer {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    
+        .selected-answer strong {
+            color: #555;
+        }
+    </style>
 </head>
-<body>
-    <h2>Submitted Data</h2>
-    <h2 class="selected-answers">Selected Answers</h2>
-    <ul class="selected-answers">
-        {% for data in data_list %}
-            <li class="selected-answer">
-                <strong>{{ data.question }}</strong><br>
-                <span>{{ data.selected_answer }}</span>
-            </li>
-        {% endfor %}
-    </ul>
-</body>
+<h2>Submitted Data</h2>
+
+
+<h2 class="selected-answers">Selected Answers</h2>
+<ul class="selected-answers">
+    {% for data in data_list %}
+        <li class="selected-answer">
+            <strong>{{ data.question }}</strong><br>
+            <span>Selected Answer: {{ data.selected_answer }}</span>
+        </li>
+    {% endfor %}
+</ul>
 </html>

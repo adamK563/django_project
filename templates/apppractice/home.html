@@ -1,0 +1,44 @@
+<!-- apppractice/templates/apppractice/home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        body {
+            margin: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            background-color: #4285f4;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome!</h1>
+
+    <a href="{% url 'login' %}"><button id="button1">Log-in </button></a>
+
+    <a href="{% url 'signup' %}"><button id="button2">Sign-up</button></a>
+
+    <a href="{% url 'admin:index' %}"><button id="button3">Admin</button></a>
+    
+</body>
+</html>
